@@ -18,33 +18,28 @@ class AE():
 
     def _run_internal(self, args: list) -> int:
         def run():
-            # Simpan argv lama
             old_argv = sys.argv
-            sys.argv = ['auto_editor'] + args  # argumen CLI
+            sys.argv = ['auto_editor'] + args
 
             try:
-                # Langsung jalankan — output akan ke console
                 try:
                     auto_editor_main()
                 except Exception as e:
                     print(f"[ERROR] auto_editor crashed: {e}", file=sys.stderr)
                 except SystemExit:
-                    pass  # Exit normal
+                    pass
             finally:
                 sys.argv = old_argv
 
-        # Jalankan di thread terpisah
         thread = threading.Thread(target=run, daemon=True)
         thread.start()
 
-        # Tunggu sampai selesai (dengan polling kecil)
         while thread.is_alive():
-            time.sleep(0.05)  # 50ms, tidak boros CPU
+            time.sleep(0.05)
 
-        # Tunggu thread benar-benar selesai
         thread.join(timeout=1)
 
-        return 0  # Anggap sukses
+        return 0
 
     def gen(self, arg: AEArgument) -> list[str]:
         if not arg.valid():
