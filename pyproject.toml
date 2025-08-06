@@ -1,0 +1,11 @@
+[project]
+name = "aerell-auto-editor-gui"
+version = "0.0.1"
+description = ""
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "auto-editor>=28.1.0",
+    "nuitka>=2.7.12",
+    "pyside6>=6.9.1",
+]
