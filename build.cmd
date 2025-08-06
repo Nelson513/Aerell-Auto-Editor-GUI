@@ -1,0 +1,1 @@
+nuitka --mingw64 --remove-output --standalone  --main=aerell_auto_editor_gui --output-filename=aerell-auto-editor-gui --enable-plugin=pyside6
