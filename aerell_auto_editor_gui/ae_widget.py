@@ -51,8 +51,7 @@ class AEWidget(QWidget):
         for enum in AEExportEnum:
             self._combo_export.addItem(enum.value[0])
         self._combo_export.currentIndexChanged.connect(self._combo_export_current_index_changed)
-
-        self._arg.export = AEExportEnum.PREMIERE
+        self._combo_export.setCurrentIndex(1)
 
         layout_combo_export.addWidget(label_combo_export)
         layout_combo_export.addWidget(self._combo_export)
@@ -100,4 +99,5 @@ class AEWidget(QWidget):
         self._button_execute_update()
 
     def _button_execute_update(self):
-        self._button_execute.setDisabled(not self._arg.valid())
+        if hasattr(self, '_button_execute'):
+            self._button_execute.setDisabled(not self._arg.valid())
