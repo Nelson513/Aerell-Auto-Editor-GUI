@@ -42,7 +42,7 @@ uv run -m aerell_auto_editor_gui
 ```
 
 Use the GUI to:
-- Select your video/audio file (Only video mp4 for now)
+- Select your video/audio file (Only video mp4 and mov for now)
 - Adjust editing settings (silence threshold, speed changes, etc.) (Not all of them, only the export feature)
 - Process the file using Auto-Editor’s smart cutting algorithm
 
