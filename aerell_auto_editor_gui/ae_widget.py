@@ -82,7 +82,7 @@ class AEWidget(QWidget):
         self.setLayout(layout)
 
     def _button_import_clicked(self):
-        full_path, _ = QFileDialog.getOpenFileName(self, "Import media", "", "Video (*.mp4)")
+        full_path, _ = QFileDialog.getOpenFileName(self, "Import media", "", "(*.mp4 *.mov)")
 
         if full_path:
             self._label_full_path.setText(full_path)
