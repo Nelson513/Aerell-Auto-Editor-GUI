@@ -1,5 +1,6 @@
 import sys, threading, time
 from aerell_auto_editor_gui.ae_arg import AEArgument
+from aerell_auto_editor_gui.ae_export_enum import AEExportEnum
 from auto_editor.__main__ import main as auto_editor_main
 
 class AE():
@@ -50,7 +51,7 @@ class AE():
         if arg.input != None:
             command.append(arg.input)
 
-        if arg.export != None:
+        if arg.export != None and arg.export != AEExportEnum.NONE:
             command.append('--export')
             command.append(arg.export.value[0])
 

@@ -1,6 +1,7 @@
 from enum import Enum
 
 class AEExportEnum(Enum):
+    NONE = 'none',
     PREMIERE = 'premiere',
     RESOLVE = 'resolve',
     FINAL_CUT_PRO = 'final-cut-pro',

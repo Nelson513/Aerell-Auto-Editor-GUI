@@ -51,7 +51,7 @@ class AEWidget(QWidget):
         for enum in AEExportEnum:
             self._combo_export.addItem(enum.value[0])
         self._combo_export.currentIndexChanged.connect(self._combo_export_current_index_changed)
-        self._combo_export.setCurrentIndex(1)
+        self._combo_export.setCurrentIndex(0)
 
         layout_combo_export.addWidget(label_combo_export)
         layout_combo_export.addWidget(self._combo_export)
@@ -81,7 +81,7 @@ class AEWidget(QWidget):
         self.setLayout(layout)
 
     def _button_import_clicked(self):
-        full_path, _ = QFileDialog.getOpenFileName(self, "Import media", "", "(*.mp4 *.mov)")
+        full_path, _ = QFileDialog.getOpenFileName(self, "Import media", "", "(*.mp4 *.mov *.m4a)")
 
         if full_path:
             self._label_full_path.setText(full_path)
